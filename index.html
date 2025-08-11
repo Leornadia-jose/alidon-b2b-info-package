@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alidon™ Corporate Gifting - Professional Information Package</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Alidon Brand Colors from Packaging */
+        :root {
+            --alidon-blue-light: #4FC3F7;
+            --alidon-blue-main: #1976D2;
+            --alidon-blue-dark: #0D47A1;
+            --alidon-green-light: #81C784;
+            --alidon-green-main: #4CAF50;
+            --alidon-green-dark: #388E3C;
+            --alidon-purple: #9C27B0;
+            --alidon-purple-light: #E1BEE7;
+        }
+        
+        .page-section {
+            min-height: 100vh;
+            padding: 4rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Alidon Brand Gradients */
+        .alidon-gradient-main {
+            background: linear-gradient(135deg, var(--alidon-blue-light) 0%, var(--alidon-green-main) 50%, var(--alidon-blue-main) 100%);
+        }
+        
+        .alidon-gradient-secondary {
+            background: linear-gradient(135deg, var(--alidon-green-light) 0%, var(--alidon-blue-light) 100%);
+        }
+        
+        .alidon-gradient-accent {
+            background: linear-gradient(135deg, var(--alidon-purple-light) 0%, var(--alidon-blue-light) 100%);
+        }
+        
+        .alidon-blue {
+            color: var(--alidon-blue-main);
+        }
+        
+        .alidon-bg-blue {
+            background-color: var(--alidon-blue-main);
+        }
+        
+        .alidon-green {
+            color: var(--alidon-green-main);
+        }
+        
+        .alidon-bg-green {
+            background-color: var(--alidon-green-main);
+        }
+        
+        .alidon-purple {
+            color: var(--alidon-purple);
+        }
+        
+        .alidon-bg-purple {
+            background-color: var(--alidon-purple);
+        }
+        
+        /* Animation for elements fading in on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.is-open .modal-container {
+            transform: translateY(0);
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #f1f5f9;
+            border: none;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+        }
+        .modal-close:hover {
+            background: #e2e8f0;
+        }
+
+        /* Enhanced Cards and Elements */
+        .alidon-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px rgba(25, 118, 210, 0.1);
+        }
+        
+        .alidon-button-primary {
+            background: linear-gradient(135deg, var(--alidon-blue-main) 0%, var(--alidon-green-main) 100%);
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+        }
+        
+        .alidon-button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(25, 118, 210, 0.4);
+        }
+
+        @media print {
+            .page-section {
+                min-height: auto;
+                page-break-inside: avoid;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Cover Page -->
+    <div class="page-section alidon-gradient-main flex items-center justify-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+        <div class="container mx-auto px-8 text-center relative z-10 max-w-4xl fade-in-section">
+            <img src="https://alidon.co.za/cdn/shop/files/Logo_aaac8127-a5e1-4c0a-bc5c-4b7e478a5606.png?v=1680098843&width=250" 
+                 alt="Alidon Premium Oral Care Logo" class="mx-auto mb-8 h-24 object-contain">
+            
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                The Corporate Gift They'll<br/>
+                <span class="text-yellow-300">Actually Use & Remember</span>
+            </h1>
+            
+            <h2 class="text-2xl md:text-3xl font-light mb-8 opacity-90">
+                A Premium Corporate Gifting Proposal
+            </h2>
+            
+            <div class="alidon-card p-8 mb-8">
+                <img src="https://alidon.co.za/cdn/shop/files/alidon-teeth-whitening-kit.png?v=1722894425&width=720" 
+                     alt="Alidon Teeth Whitening Kit displayed in its premium packaging" class="mx-auto h-96 object-contain mb-6">
+            </div>
+            
+            <div class="text-lg opacity-80 mb-8">
+                Transform smiles, strengthen relationships, boost confidence
+            </div>
+            
+            <div class="bg-white bg-opacity-20 rounded-lg p-4 inline-block">
+                <p class="text-sm font-medium">Prepared for Corporate Decision Makers</p>
+                <p class="text-xs opacity-80">Professional Gifting Solutions by Alidon™</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Founder's Letter -->
+    <div class="page-section bg-white">
+        <div class="container mx-auto px-8 max-w-4xl fade-in-section">
+            <div class="alidon-card p-12 shadow-2xl">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold alidon-blue mb-4">A Personal Note from Our Founder</h2>
+                    <div class="w-24 h-1 alidon-bg-blue mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="prose prose-lg max-w-none text-gray-700">
+                    <p class="text-xl leading-relaxed mb-6 font-medium text-gray-800">
+                        Dear Valued Partner,
+                    </p>
+                    
+                    <p class="mb-6">
+                        Finding a corporate gift that's both memorable and meaningful has become increasingly challenging in today's competitive business landscape. Generic gifts are quickly forgotten, expensive items strain budgets, and impersonal tokens fail to convey genuine appreciation.
+                    </p>
+                    
+                    <p class="mb-6">
+                        At Alidon™, we believe the best corporate gifts are investments in people's well-being and confidence. A brighter, whiter smile is something they'll carry with them every single day – in every meeting, presentation, client interaction, and professional photograph. Long after other gifts are discarded or forgotten, the confidence boost from a radiant smile continues to pay dividends.
+                    </p>
+                    
+                    <p class="mb-6">
+                        Our Teeth Whitening Kit delivers professional-grade results in just 16 minutes per day, using our breakthrough PAP White Pro™ formula that's gentle yet highly effective. This isn't just a gift – it's a transformative experience that shows your team or clients that you're invested in their success and well-being.
+                    </p>
+                    
+                    <p class="mb-8">
+                        This information package outlines how Alidon™ can help you create lasting impressions and strengthen valuable relationships, whether you're recognizing your dedicated team members or expressing gratitude to your most important clients.
+                    </p>
+                    
+                    <div class="border-l-4 border-blue-500 pl-6 mb-8 italic alidon-gradient-secondary p-4 rounded-r-lg">
+                        <p class="text-lg font-medium text-white">
+                            "When you give someone the gift of confidence, you're giving them something that enhances every aspect of their professional and personal life."
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4 pt-6 border-t border-gray-200">
+                    <div class="w-16 h-16 alidon-gradient-main rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-800">Founder & CEO</p>
+                        <p class="text-gray-600">Alidon™ Oral Care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Overview -->
+    <div class="page-section alidon-gradient-secondary">
+        <div class="container mx-auto px-8 max-w-6xl fade-in-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">More Than a Gift – It's a Professional Advantage</h2>
+                <p class="text-xl text-white opacity-90 max-w-3xl mx-auto">
+                    The Alidon™ Teeth Whitening Kit combines cutting-edge technology with premium ingredients to deliver results that were once only available in dental offices.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="alidon-card p-8">
+                    <h3 class="text-2xl font-bold mb-6 alidon-blue">What's Inside the Premium Kit</h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 alidon-bg-green rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <span class="text-gray-700"><strong>Advanced LED Device</strong> with professional-grade light technology</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 alidon-bg-green rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <span class="text-gray-700"><strong>6 Whitening Treatments</strong> containing PAP White Pro™ formula</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 alidon-bg-green rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <span class="text-gray-700"><strong>PAP Primer</strong> for optimal preparation and results</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 alidon-bg-green rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <span class="text-gray-700"><strong>Professional Shade Guide</strong> to track progress</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 alidon-bg-green rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <span class="text-gray-700"><strong>Premium Travel Case</strong> for convenience and protection</span>
+                        </div>
+                    </div>
+                    
+                    <div class="alidon-gradient-accent rounded-lg p-6 text-white">
+                        <h4 class="font-bold text-lg mb-3">Key Performance Metrics:</h4>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-3xl font-bold">16</div>
+                                <div class="text-sm opacity-80">Minutes per treatment</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold">6</div>
+                                <div class="text-sm opacity-80">Complete treatments</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="https://alidon.co.za/cdn/shop/files/Whitener_1.png?v=1722894415&width=1400" 
+                         alt="Components of the Alidon Teeth Whitening Kit" class="w-full rounded-2xl shadow-xl mb-6 h-96 object-cover">
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-white">Professional Benefits</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="alidon-card p-4 text-center">
+                            <i class="fas fa-smile text-3xl text-yellow-500 mb-2"></i>
+                            <h4 class="font-semibold mb-1 alidon-blue">Confidence Boost</h4>
+                            <p class="text-sm text-gray-600">Enhanced self-assurance in meetings</p>
+                        </div>
+                        <div class="alidon-card p-4 text-center">
+                            <i class="fas fa-handshake text-3xl alidon-green mb-2"></i>
+                            <h4 class="font-semibold mb-1 alidon-blue">Client Impact</h4>
+                            <p class="text-sm text-gray-600">Creates lasting positive impressions</p>
+                        </div>
+                        <div class="alidon-card p-4 text-center">
+                            <i class="fas fa-heart text-3xl text-red-500 mb-2"></i>
+                            <h4 class="font-semibold mb-1 alidon-blue">Wellness Focus</h4>
+                            <p class="text-sm text-gray-600">Demonstrates commitment to well-being</p>
+                        </div>
+                        <div class="alidon-card p-4 text-center">
+                            <i class="fas fa-star text-3xl alidon-purple mb-2"></i>
+                            <h4 class="font-semibold mb-1 alidon-blue">Memorable</h4>
+                            <p class="text-sm text-gray-600">Stands out from generic gifts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tailored Applications -->
+    <div class="page-section bg-white">
+        <div class="container mx-auto px-8 max-w-6xl fade-in-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold alidon-blue mb-4">Tailored for Every Corporate Occasion</h2>
+                <p class="text-xl text-gray-600">Perfect for strengthening relationships and recognizing achievements</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Employee Gifting -->
+                <div class="alidon-card p-8 border-l-4" style="border-left-color: var(--alidon-green-main);">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 alidon-bg-green rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold alidon-green">Employee Recognition & Retention</h3>
+                    </div>
+                    
+                    <p class="alidon-green mb-6 text-lg">
+                        Show your team you're invested in them as people, not just employees. A powerful tool for boosting morale and reducing turnover.
+                    </p>
+                    
+                    <h4 class="font-bold text-lg mb-4 alidon-green">Perfect Occasions:</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3"><i class="fas fa-calendar-check alidon-green"></i><span class="text-gray-700"><strong>Wellness Week Initiatives</strong> - Stand out from typical health programs</span></div>
+                        <div class="flex items-center space-x-3"><i class="fas fa-trophy alidon-green"></i><span class="text-gray-700"><strong>Performance Bonuses</strong> - Tangible recognition of exceptional work</span></div>
+                        <div class="flex items-center space-x-3"><i class="fas fa-birthday-cake alidon-green"></i><span class="text-gray-700"><strong>Work Anniversaries</strong> - Celebrate loyalty and dedication</span></div>
+                        <div class="flex items-center space-x-3"><i class="fas fa-user-plus alidon-green"></i><span class="text-gray-700"><strong>New Hire Onboarding</strong> - Make a memorable first impression</span></div>
+                        <div class="flex items-center space-x-3"><i class="fas fa-gift alidon-green"></i><span class="text-gray-700"><strong>Holiday Appreciation</strong> - Go beyond traditional seasonal gifts</span></div>
+                    </div>
+                    
+                    <div class="alidon-gradient-secondary rounded-lg p-4 mt-6 text-white">
+                        <p class="font-medium"><i class="fas fa-lightbulb mr-2"></i>Result: Increased employee satisfaction, improved retention rates, and enhanced company culture</p>
+                    </div>
+                </div>
+                
+                <!-- Client Gifting -->
+                <div class="alidon-card p-8 border-l-4" style="border-left-color: var(--alidon-blue-main);">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 alidon-bg-blue rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-handshake text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold alidon-blue">Client Relationship Building</h3>
+                    </div>
+                    
+                    <p class="alidon-blue mb-6 text-lg">
+                        Move beyond transactional relationships. A premium, personal gift that builds genuine rapport and keeps your brand top-of-mind.
+                    </p>
+                    
+                    <h4 class="font-bold text-lg mb-4 alidon-blue">Strategic Applications:</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3"><i class="fas fa-calendar-alt alidon-blue"></i><span class="text-gray-700"><strong>Year-End Appreciation</strong> - Premium alternative to typical holiday gifts</span></div>
+                        <div class="flex items-center space-x-3"><i class="fas fa-dollar-sign alidon-blue"></i><span class="text-gray-700"><strong>Deal Closing Celebrations</strong> - Mark successful partnerships</span></div>
+                        <div class="flex items-center space-x-3"><i class="fas fa-tools alidon-blue"></i><span class="text-gray-700"><strong>Service Recovery</strong> - Restore confidence after challenges</span></div>
+                        <div class="flex items-center space-x-3"><i class="fas fa-crown alidon-blue"></i><span class="text-gray-700"><strong>VIP Client Programs</strong> - Exclusive rewards for top accounts</span></div>
+                        <div class="flex items-center space-x-3"><i class="fas fa-medal alidon-blue"></i><span class="text-gray-700"><strong>Partnership Milestones</strong> - Celebrate long-term relationships</span></div>
+                    </div>
+                    
+                    <div class="alidon-gradient-main rounded-lg p-4 mt-6 text-white">
+                        <p class="font-medium"><i class="fas fa-chart-line mr-2"></i>Result: Stronger client loyalty, increased referrals, and higher contract renewal rates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Branding -->
+    <div class="page-section alidon-gradient-accent">
+        <div class="container mx-auto px-8 max-w-6xl fade-in-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Make It Unmistakably Yours</h2>
+                <p class="text-xl text-white opacity-90">Transform the Alidon™ experience with your unique brand identity</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://alidon.co.za/cdn/shop/files/alidon-at-home-teeth-whitening-kit.jpg?v=1722894435&width=1296" 
+                         alt="Custom branded Alidon Teeth Whitening Kit box" class="w-full rounded-2xl shadow-2xl h-96 object-cover">
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">Premium Customization Options</h3>
+                    <div class="space-y-6">
+                        <div class="alidon-card p-6 shadow-xl">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-box text-2xl alidon-purple mr-4"></i>
+                                <h4 class="text-xl font-semibold text-gray-800">Custom Branded Packaging</h4>
+                            </div>
+                            <p class="text-gray-600 mb-4">Your logo and corporate colors elegantly integrated into premium packaging design</p>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Full-color logo placement</li>
+                                <li>• Brand color coordination</li>
+                                <li>• Premium finish options</li>
+                                <li>• Professional design consultation</li>
+                            </ul>
+                        </div>
+                        <div class="alidon-card p-6 shadow-xl">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-envelope text-2xl alidon-purple mr-4"></i>
+                                <h4 class="text-xl font-semibold text-gray-800">Personalized Insert Cards</h4>
+                            </div>
+                            <p class="text-gray-600 mb-4">Custom thank-you messages and personal touches that resonate with recipients</p>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Individual personalization available</li>
+                                <li>• Corporate messaging options</li>
+                                <li>• Premium cardstock materials</li>
+                                <li>• Multiple design templates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Stories -->
+    <div class="page-section bg-white">
+        <div class="container mx-auto px-8 max-w-6xl fade-in-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold alidon-blue mb-4">The Proof Is in the Smile</h2>
+                <p class="text-xl text-gray-600">Real results from forward-thinking companies who chose Alidon™</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="alidon-card p-8 border-l-4" style="border-left-color: var(--alidon-green-main);">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 alidon-bg-green rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold alidon-green">Employee Wellness Success</h3>
+                            <p class="alidon-green opacity-75">Leading Technology Company, Cape Town</p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="font-bold alidon-green mb-2">The Challenge:</h4>
+                        <p class="text-gray-700 mb-4">A 200-employee tech company needed a unique gift for their annual Employee Wellness Week that would stand out from typical wellness initiatives.</p>
+                        <h4 class="font-bold alidon-green mb-2">The Alidon™ Solution:</h4>
+                        <p class="text-gray-700 mb-4">Provided 200 custom-branded Alidon™ kits with personalized thank-you cards from the CEO.</p>
+                        <h4 class="font-bold alidon-green mb-2">Measurable Results:</h4>
+                        <div class="alidon-gradient-secondary rounded-lg p-4 text-white">
+                            <div class="grid grid-cols-2 gap-4 text-center mb-4">
+                                <div>
+                                    <div class="text-3xl font-bold">40%</div>
+                                    <div class="text-sm opacity-80">Increase in positive feedback</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold">#1</div>
+                                    <div class="text-sm opacity-80">Rated wellness perk</div>
+                                </div>
+                            </div>
+                            <p class="font-medium text-center">"Employees are still talking about it months later!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alidon-card p-8 border-l-4" style="border-left-color: var(--alidon-blue-main);">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 alidon-bg-blue rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-handshake text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold alidon-blue">Client Relationship Breakthrough</h3>
+                            <p class="alidon-blue opacity-75">Financial Services Group, Johannesburg</p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="font-bold alidon-blue mb-2">The Challenge:</h4>
+                        <p class="text-gray-700 mb-4">A financial services firm wanted to differentiate their year-end client gifts and create memorable experiences for their top 50 clients.</p>
+                        <h4 class="font-bold alidon-blue mb-2">The Alidon™ Solution:</h4>
+                        <p class="text-gray-700 mb-4">Delivered premium-packaged kits with full brand customization and personal notes.</p>
+                        <h4 class="font-bold alidon-blue mb-2">Exceptional Outcomes:</h4>
+                        <div class="alidon-gradient-main rounded-lg p-4 text-white">
+                            <div class="grid grid-cols-2 gap-4 text-center mb-4">
+                                <div>
+                                    <div class="text-3xl font-bold">75%</div>
+                                    <div class="text-sm opacity-80">Personal thank-you rate</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold">95%</div>
+                                    <div class="text-sm opacity-80">Contract renewal rate</div>
+                                </div>
+                            </div>
+                            <p class="font-medium text-center">"This gift helped secure our highest client retention rate in company history."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Tiers -->
+    <div class="page-section alidon-gradient-secondary">
+        <div class="container mx-auto px-8 max-w-6xl fade-in-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Investment Packages & Transparent Pricing</h2>
+                <p class="text-xl text-white opacity-90">Designed to deliver maximum value at every volume level</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="alidon-card p-8 shadow-xl border-2 border-gray-200 hover:border-blue-300 transition-all">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-2 alidon-blue">Starter Package</h3>
+                        <p class="alidon-green mb-6">10-50 kits</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check alidon-green"></i>
+                            <span class="text-gray-700">R1,950 per kit</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check alidon-green"></i>
+                            <span class="text-gray-700">Custom branded sleeve</span>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-4 text-center">
+                        <p class="text-sm text-gray-600">Starting from</p>
+                        <p class="text-2xl font-bold alidon-blue">R19,500</p>
+                    </div>
+                </div>
+                
+                <div class="alidon-card p-8 shadow-xl border-2 border-2 relative transform scale-105" style="border-color: var(--alidon-blue-main);">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="alidon-bg-blue text-white px-4 py-2 rounded-full text-sm font-bold">MOST POPULAR</span>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-2 alidon-blue">Business Package</h3>
+                        <p class="alidon-green mb-6">51-200 kits</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check alidon-green"></i>
+                            <span class="text-gray-700"><strong>R1,750 per kit</strong></span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check alidon-green"></i>
+                            <span class="text-gray-700">Premium branded packaging</span>
+                        </div>
+                    </div>
+                    <div class="alidon-gradient-main rounded-lg p-4 text-center text-white">
+                        <p class="text-sm opacity-80">Starting from</p>
+                        <p class="text-2xl font-bold">R89,250</p>
+                    </div>
+                </div>
+                
+                <div class="alidon-card p-8 shadow-xl border-2 border-2" style="border-color: var(--alidon-purple);">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-2 alidon-purple">Enterprise Package</h3>
+                        <p class="alidon-green mb-6">200+ kits</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check alidon-green"></i>
+                            <span class="text-gray-700"><strong>R1,500 per kit</strong></span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check alidon-green"></i>
+                            <span class="text-gray-700">Fully custom packaging</span>
+                        </div>
+                    </div>
+                    <div class="alidon-gradient-accent rounded-lg p-4 text-center text-white">
+                        <p class="text-sm opacity-80">Starting from</p>
+                        <p class="text-2xl font-bold">R300,000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="page-section alidon-gradient-main text-white">
+        <div class="container mx-auto px-8 max-w-4xl text-center fade-in-section">
+            <div class="mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                    Ready to Create an <span class="text-yellow-300">Unforgettable</span><br/>
+                    Corporate Gifting Experience?
+                </h2>
+                <p class="text-xl opacity-90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Transform your corporate relationships with gifts that truly matter. It's an investment in confidence, wellness, and long-term business success.
+                </p>
+            </div>
+            
+            <div class="mb-12">
+                <button data-modal-trigger class="no-print alidon-button-primary text-xl px-12 py-6">
+                    <i class="fas fa-calendar-check mr-3"></i>
+                    Book Your 15-Minute Consultation
+                </button>
+                <p class="text-sm opacity-70 mt-4">Available Monday-Friday, 9 AM - 5 PM SAST</p>
+            </div>
+            
+            <div class="alidon-card p-8 text-gray-800">
+                <div class="flex items-center justify-center mb-6">
+                    <img src="https://alidon.co.za/cdn/shop/files/Logo_aaac8127-a5e1-4c0a-bc5c-4b7e478a5606.png?v=1680098843&width=250" 
+                         alt="Alidon Premium Oral Care Logo" class="h-12 object-contain mr-4">
+                    <div class="text-left">
+                        <h4 class="font-bold text-lg alidon-blue">Corporate Gifting Specialist</h4>
+                        <p class="text-gray-600">Alidon™ Premium Oral Care</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div>
+                        <i class="fas fa-phone text-2xl text-yellow-500 mb-2"></i>
+                        <p class="font-semibold alidon-blue">Direct Line</p>
+                        <a href="tel:+27215550123" class="text-gray-600 hover:text-blue-600 transition-colors">+27 (0) 21 555 0123</a>
+                    </div>
+                    <div>
+                        <i class="fab fa-whatsapp text-2xl alidon-green mb-2"></i>
+                        <p class="font-semibold alidon-blue">WhatsApp</p>
+                        <a href="https://wa.me/27821234567?text=Hi!%20I'm%20interested%20in%20your%20corporate%20gifting%20packages." target="_blank" class="text-gray-600 hover:text-green-600 transition-colors">Chat with us instantly</a>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope text-2xl alidon-blue mb-2"></i>
+                        <p class="font-semibold alidon-blue">Email</p>
+                        <a href="mailto:corporate@alidon.co.za" class="text-gray-600 hover:text-blue-600 transition-colors">corporate@alidon.co.za</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consultation Modal -->
+    <div id="booking-modal" class="modal-overlay no-print">
+        <div class="modal-container">
+            <button class="modal-close" data-modal-close>&times;</button>
+            <div id="modal-content">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold alidon-blue">Book Your Consultation</h2>
+                    <p class="text-gray-600">Let's discuss how we can elevate your gifting strategy.</p>
+                </div>
+                <form id="booking-form">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                        <input type="text" id="company" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div class="mb-6">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number (Optional)</label>
+                        <input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <button type="submit" class="alidon-button-primary w-full">Request Consultation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Intersection Observer for fade-in animations
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('booking-modal');
+        const modalContent = document.getElementById('modal-content');
+        const bookingForm = document.getElementById('booking-form');
+        const triggerButtons = document.querySelectorAll('[data-modal-trigger]');
+        const closeButtons = document.querySelectorAll('[data-modal-close]');
+
+        const openModal = () => modal.classList.add('is-open');
+        const closeModal = () => modal.classList.remove('is-open');
+
+        triggerButtons.forEach(button => {
+            button.addEventListener('click', openModal);
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', closeModal);
+        });
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+        
+        bookingForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('name').value.split(' ')[0];
+
+            modalContent.innerHTML = `
+                <div class="text-center p-8">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-check text-3xl text-green-600"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Thank You, ${name}!</h2>
+                    <p class="text-gray-600">Your consultation request has been received. Our team will contact you within one business day.</p>
+                    <button data-modal-close class="mt-6 alidon-button-primary">Close</button>
+                </div>
+            `;
+            modalContent.querySelector('[data-modal-close]').addEventListener('click', closeModal);
+        });
+    });
+    </script>
+</body>
+</html>
